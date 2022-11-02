@@ -1,0 +1,33 @@
+import java.util.*;
+public class Exercise05_01{
+  public static void main(String[] args){
+    int positive = 0, negative = 0, count = 0, total = 0, number;
+    float average;
+
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter an integer, the input ends if it is 0: ");
+    number = input.nextInt();
+
+    while (number != 0) {
+      if (number > 0)
+        positive++;
+      else if (number < 0)
+        negative++;
+
+      total += number;
+      count++;
+      
+      number = input.nextInt();
+    }
+    average = (float)total / (float)count;
+
+    if (count == 0)
+      System.out.println("No numbers are entered except 0");
+    else {
+      System.out.println("The number of positives is " + positive);
+      System.out.println("The number of negatives is " + negative);
+      System.out.println("The total is " + (double)total);
+      System.out.println("The average is " + average);
+    }
+  }
+}
